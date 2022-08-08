@@ -1,18 +1,15 @@
 import sys
 
-while(True):
-    data = []
-    n = input()
-    if n == '0':break
+d = [0] * 100
+
+d[1] = 1
+d[2] = 1
+n = 99
+
+for i in range(3, n+1): # 99까지
+    d[i] = d[i-1] + d[i-2]
+
+print(d[n])
     
-    for i in n:
-        data.append(i)
-    
-    sum = 1
-    for i in data:
-        sum += 1
-        if i == '1':sum+=2
-        elif i == '0':sum+=4
-        else:sum+=3
-    print(sum)
+ 
     
