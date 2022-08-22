@@ -10,5 +10,5 @@ for i in range(1, n): #i번째 대각선
         dp[j][j+i] = 2**31
         for k in range(j, j+i): #이전 단계 부분문제에서 현재 문제를 푸는 k가지 방법 비교
             dp[j][j+i] = min(dp[j][j+i], dp[j][k] + dp[k+1][j+i] + lst[j][0]*lst[k][1]*lst[j+i][1])
-
+# test
 print(dp[0][n-1])
