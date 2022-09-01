@@ -1,14 +1,27 @@
-import sys
 
-n = int(sys.stdin.readline())
-lst = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
 
-dp = [[0]*n for _ in range(n)] #2차원 배열 생성
+a1, b1 = map(int, input().split())
+data1=[]
+for _ in range(a1):
+    data1.append(list(map(int, input().split())))
+    
 
-for i in range(1, n): #i번째 대각선
-    for j in range(n-i): #i번째 대각선의 j번째 열
-        dp[j][j+i] = 2**31
-        for k in range(j, j+i): #이전 단계 부분문제에서 현재 문제를 푸는 k가지 방법 비교
-            dp[j][j+i] = min(dp[j][j+i], dp[j][k] + dp[k+1][j+i] + lst[j][0]*lst[k][1]*lst[j+i][1])
-# test
-print(dp[0][n-1])
+a2, b2 = map(int, input().split())
+data2=[]
+for _ in range(a2):
+    data2.append(list(map(int, input().split())))      
+    
+result = []    
+for _ in range(a1):
+    data = []
+    for _ in range(b2):
+        data.append(0)
+    result.append(data)
+    
+result2 = [[0 for _ in range(b2)] for _ in range(a1)]
+
+print(result)
+
+print(result2)
+
+result3 = [[0 for _ in range(b2)]for _ in range(a1)]
