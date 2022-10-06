@@ -1,15 +1,35 @@
-import sys
 
-d = [0] * 100
 
-d[1] = 1
-d[2] = 1
-n = 99
 
-for i in range(3, n+1): # 99까지
-    d[i] = d[i-1] + d[i-2]
+class LHS{
+    String msg;
+    String date;
+    public void toHS(String[] args){
+        System.out.println("Happy Birthday");
+        System.out.println(msg);
+    }
+}
+SK = LHS(); 
+SK.msg = "메시지를 입력해주세요"
+SK.toHS()
 
-print(d[n])
-    
- 
-    
+
+
+
+B = "1998/10/08";
+T = new Date();
+Y = T.getFullYear();
+HBD = Y-B.substring(0,4)+1;
+
+
+class LHS{
+    String msg;
+    String date;
+    public void toHS(String[] args){
+        System.out.println("Happy Birthday");
+        System.out.println(msg);
+    }
+}
+SK = LHS(); 
+SK.msg = "호석아~"
+SK.toHS()
