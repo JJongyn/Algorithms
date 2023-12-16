@@ -1,3 +1,7 @@
+'''
+LV3. https://softeer.ai/practice/6293
+'''
+
 import sys
 
 N = int(sys.stdin.readline())
