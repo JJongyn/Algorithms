@@ -1,0 +1,18 @@
+'''
+
+2019 카카오 개발자 겨울 인턴십 https://school.programmers.co.kr/learn/courses/30/lessons/64065
+
+'''
+
+def solution(s):
+    
+    new_data = s[2:len(s)-2].split('},{')
+    new_data.sort(key=lambda x : len(x))
+    answers = []
+    for data in new_data:
+        data=data.split(',')
+        for i in data:
+            if int(i) not in answers:
+                answers.append(int(i))
+    
+    return answers
