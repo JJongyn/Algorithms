@@ -6,7 +6,7 @@
 
 def solution(s):
     
-    new_data = s[2:len(s)-2].split('},{')
+    new_data = s[2:len(s)-2].split('},{') # 맨 마지막 문자는 제외하고 해당 문자를 기준으로 Split
     new_data.sort(key=lambda x : len(x))
     answers = []
     for data in new_data:
