@@ -10,7 +10,7 @@ def solution(topping):
     b = set() # 동생
     
     for i in topping:
-        a[i] -= 1
+        a[i] -= 1 # 형에서 하나 제거
         b.add(i)
         if a[i] == 0:
             a.pop(i)
