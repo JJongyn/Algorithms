@@ -12,13 +12,13 @@ def dfs(energy):
         target = lst[i-1] * lst[i+1]
         k = lst[i]
         del lst[i]
+        print(lst)
         dfs(target + energy)
         lst.insert(i, k)
-    
+        print('return', lst)
     
 results = []
 dfs(0)
-print(results)
 print(max(results))
 # def dfs(tmp):
 #     global ans
