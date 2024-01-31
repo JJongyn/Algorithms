@@ -8,7 +8,6 @@ n을 1, 2, 3의 합으로 나타내는 방법
 '''
 n, k = map(int, input().split())
 
-
 results = []
 def back_tracking(ans):
     if sum(ans) > n:
