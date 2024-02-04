@@ -13,20 +13,32 @@ for _ in range(M):
     graph[i].append(j)
     graph[j].append(i)
 
-result = []
+# result = []
+# def dfs(v, num):
+#     num += 1
+#     visited[v] = True
+#     if v == B:
+#         result.append(num)
+    
+#     for i in graph[v]:
+#         if not visited[i]:
+#             dfs(i, num)
+
+# dfs(A, 0)
+# if not result:
+#     print(-1) 
+# else:
+#     print(result[0]-1)
+
+
 def dfs(v, num):
-    num += 1
     visited[v] = True
     if v == B:
-        result.append(num)
+        print(num)
     
     for i in graph[v]:
         if not visited[i]:
-            dfs(i, num)
+            dfs(i, num+1)
+    #return num
 
 dfs(A, 0)
-if not result:
-    print(-1) 
-else:
-    print(result[0])
-            
