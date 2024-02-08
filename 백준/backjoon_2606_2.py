@@ -10,21 +10,21 @@ for _ in range(M):
     graph[y].append(x)
     
 visited = [False] * (N+1)
-# def bfs(x):
-#     deq = deque([x])
-#     visited[x] = True
-#     count = 0
-#     while deq:
-#         node = deq.popleft()
-#         for next in graph[node]:
-#             if not visited[next]:
-#                 visited[next] = True
-#                 deq.append(next)
-#                 count += 1
-#     return count
+def bfs(x):
+    deq = deque([x])
+    visited[x] = True
+    count = 0
+    while deq:
+        node = deq.popleft()
+        for next in graph[node]:
+            if not visited[next]:
+                visited[next] = True
+                deq.append(next)
+                count += 1
+    return count
 
-# result = bfs(1)
-# print(result)
+result = bfs(1)
+print(result)
 
 def dfs(x, cnt):
     visited[x] = True
