@@ -3,34 +3,30 @@
 '''
 
 import sys
+import copy
+
 input = sys.stdin.readline
 
 N = int(input().rstrip())
 
 data = [input().rstrip() for _ in range(N)]
 target = data[0]
-cnt = 0
+target = sorted(list(target))
+
+total = 0
 for item in data[1:]:
-    # 문자를 2개 처리해야하는 경우는 제외
+    ex_cnt = 0
     item = sorted(list(item))
-    target = sorted(list(target))
+    item_cp = copy.deepcopy(item)
+    for t in target:
+        if t in item_cp:
+            item_cp.remove(t)
+        else:
+            ex_cnt += 1
     
-    
-    if abs(len(item) - len(target)) >= 2:
-        continue
-    
-    # 길이가 같은 경우
-    if len(item) == len(target):
-        tmp = set(item) & set(target)
-        if len(tmp) + 1 == len(set(item)) or len(tmp) == len(set(item)):
-            cnt += 1
+    if ex_cnt < 2 and len(item_cp) <= 1:
+        total += 1
             
-    # 길이가 1개 차이나는 경우
-    else:
-        tmp = set(item) & set(target)
-        if len(tmp) == min(len(set(item)), len(set(target))):
-            cnt+=1
-            
-print(cnt)
+print(total)
         
     
