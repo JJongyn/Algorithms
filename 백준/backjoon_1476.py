@@ -9,10 +9,7 @@ for i in range(1, max_len):
     e = i % 15 if i % 15 > 0 else 15
     s = i % 28 if i % 28 > 0 else 28
     m = i % 19 if i % 19 > 0 else 19
-    
-    if e + s + m == 0:
-        print(i)
         
-    elif E == e and S == s and M == m:
+    if E == e and S == s and M == m:
         print(i)
         break
